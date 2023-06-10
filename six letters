@@ -1,0 +1,24 @@
+HTML:
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>six</title>
+    </head>
+    <body>
+        <script src="six.js"></script>
+    </body>
+</html>
+
+JAVASCRIPT:
+const countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland'];
+
+// Use find to search for the first country with six letters
+const countryWithSixLetters = countries.find(country => country.length === 6);
+
+// Print the result
+console.log(countryWithSixLetters);
+
+OUTPUT:
+Sweden
