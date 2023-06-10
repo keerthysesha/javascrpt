@@ -1,0 +1,32 @@
+HITML:
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>set</title>
+    </head>
+    <body>
+        <script src="set.js"></script>
+    </body>
+</html>
+
+JAVASCRIPT:
+const countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland'];
+
+// Define the concatenation function
+const concatenateCountries = (sentence, country, index) => {
+  if (index === 0) {
+    return country;
+  } else if (index === countries.length - 1) {
+    return sentence + ', and ' + country;
+  } else {
+    return sentence + ', ' + country;
+  }
+};
+
+// Use reduce to concatenate the countries
+const concatenatedSentence = countries.reduce(concatenateCountries, '');
+
+// Print the result
+console.log(concatenatedSentence + ' are north European countries');
