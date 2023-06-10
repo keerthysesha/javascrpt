@@ -1,0 +1,69 @@
+HTML:
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>setOP</title>
+    </head>
+    <body>
+        <script src="setOP.js"></script>
+    </body>
+</html>
+
+JAVASCRIPT:
+// Sample country data
+const countries = [
+  { name: 'Country 1', languages: ['English', 'Spanish', 'French'] },
+  { name: 'Country 2', languages: ['English', 'Arabic'] },
+  { name: 'Country 3', languages: ['Spanish', 'Portuguese'] },
+  // Add more country objects with languages...
+];
+
+function mostSpokenLanguages(countries, limit) {
+  // Create an object to store language counts
+  const languageCounts = {};
+
+  // Count the occurrences of each language
+  countries.forEach(country => {
+    const languages = country.languages;
+    languages.forEach(language => {
+      if (languageCounts[language]) {
+        languageCounts[language]++;
+      } else {
+        languageCounts[language] = 1;
+      }
+    });
+  });
+
+  // Convert the language counts object into an array of objects
+  const languageCountsArray = Object.entries(languageCounts).map(([language, count]) => ({
+    [language]: count
+  }));
+
+  // Sort the languages by count in descending order
+  languageCountsArray.sort((a, b) => {
+    const aCount = Object.values(a)[0];
+    const bCount = Object.values(b)[0];
+    return bCount - aCount;
+  });
+
+  // Return the top `limit` languages
+  return languageCountsArray.slice(0, limit);
+}
+
+console.log(mostSpokenLanguages(countries, 10));
+console.log(mostSpokenLanguages(countries, 3));
+
+OUTPUT:
+Array(5)0:{English: 2}
+1: {Spanish: 2}
+: {French: 1}
+3: {Arabic: 1}
+4: {Portuguese: 1}
+length: 5[[Prototype]]: Array(0) 
+Array(3)0: {English: 2}
+1: {Spanish: 2}
+2: {French: 1}
+length: 3[[Prototype]]: Array(0)
+lang.html:38 Live reload enabled.
