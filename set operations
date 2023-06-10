@@ -1,0 +1,35 @@
+HTML:
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>setOP</title>
+    </head>
+    <body>
+        <script src="setOP.js"></script>
+    </body>
+</html>
+
+JAVASCRIPT:
+const a = [4, 5, 8, 9];
+const b = [3, 4, 5, 7];
+
+// Find the union of arrays a and b
+const union = [...new Set([...a, ...b])];
+console.log('Union:', union);
+
+// Find the intersection of arrays a and b
+const intersection = a.filter(value => b.includes(value));
+console.log('Intersection:', intersection);
+
+// Find the elements in array a that are not in array b
+const difference = a.filter(value => !b.includes(value));
+console.log('Difference:', difference);
+
+
+OUTPUT:
+Union: Array(6)0: 41: 52: 83: 94: 35: 7length: 6[[Prototype]]: Array(0)
+setOP.js:10 Intersection: Array(2)0: 41: 5length: 2[[Prototype]]: Array(0)
+setOP.js:14 Difference: Array(2)0: 81: 9length: 2[[Prototype]]: Array(0)
+setop.html:38 Live reload enabled.
