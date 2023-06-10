@@ -1,0 +1,31 @@
+HTML:
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>reduce</title>
+    </head>
+    <body>
+        <script src="reduce.js"></script>
+    </body>
+</html>
+
+JAVASCRIPT:
+// .Use reduce to concatenate all the countries and to produce this sentence: Estonia,
+  //Finland, Sweden, Denmark, Norway, and IceLand are north European countries
+
+  const countries = ["Estonia","Finland","Sweden","Denmark","Norway","IceLand"];   
+  const sentence = countries.reduce((acc,cur) =>acc+" , "+cur);
+  console.log(sentence+" are the north European countries")
+
+
+//2.Use find to find the first country containing only six letters in the countries array
+
+
+const c = ["Estonia","Finland","Sweden","Denmark","Norway","IceLand"]; 
+const result = c.find((name) => name.length < 6)
+console.log(result)
+
+OUTPUT:
+Estonia , Finland , Sweden , Denmark , Norway , IceLand are the north European countries
