@@ -1,0 +1,58 @@
+HTML:
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>set</title>
+    </head>
+    <body>
+        <script src="specific.js"></script>
+    </body>
+</html>
+
+JAVASCRIPT:
+// Placeholder country data
+const countries = [
+  { name: 'Germany', capital: 'Berlin', population: 83149300 },
+  { name: 'France', capital: 'Paris', population: 67022000 },
+  { name: 'Spain', capital: 'Madrid', population: 46733038 },
+  // Add more countries...
+];
+
+// Sort countries by name
+const countriesByName = countries.slice().sort((a, b) => a.name.localeCompare(b.name));
+console.log('Sorted by name:');
+console.log(countriesByName);
+
+// Sort countries by capital
+const countriesByCapital = countries.slice().sort((a, b) => a.capital.localeCompare(b.capital));
+console.log('\nSorted by capital:');
+console.log(countriesByCapital);
+
+// Sort countries by population
+const countriesByPopulation = countries.slice().sort((a, b) => b.population - a.population);
+console.log('\nSorted by population:');
+console.log(countriesByPopulation);
+
+OUTPUT:
+
+Array(3)0: {name: 'France', capital: 'Paris', population: 67022000}
+1: {name: 'Germany', capital: 'Berlin', population: 83149300}
+2: {name: 'Spain', capital: 'Madrid', population: 46733038}
+length: 3[[Prototype]]: Array(0)
+specific.js:16 
+Sorted by capital:
+specific.js:17 
+Array(3)0: {name: 'Germany', capital: 'Berlin', population: 83149300}
+1: {name: 'Spain', capital: 'Madrid', population: 46733038}
+2: {name: 'France', capital: 'Paris', population: 67022000}
+length: 3[[Prototype]]: Array(0)
+specific.js:21 
+Sorted by population:
+specific.js:22 
+Array(3)0: {name: 'Germany', capital: 'Berlin', population: 83149300}
+1: {name: 'France', capital: 'Paris', population: 67022000}
+2: {name: 'Spain', capital: 'Madrid', population: 46733038}
+length: 3[[Prototype]]: Array(0)
+specific.html:38 Live reload enabled.
