@@ -1,0 +1,56 @@
+HTML:
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>set</title>
+    </head>
+    <body>
+        <script src="set.js"></script>
+    </body>
+</html>
+
+JAVASCRIPT:
+// Placeholder country data
+const countries = [
+  { name: 'Germany', language: 'German' },
+  { name: 'France', language: 'French' },
+  { name: 'Spain', language: 'Spanish' },
+  { name: 'China', language: 'Chinese' },
+  { name: 'Russia', language: 'Russian' },
+  // Add more countries...
+];
+
+function mostSpokenLanguages(countries, limit) {
+  // Create an object to store language counts
+  const languageCounts = {};
+
+  // Count the occurrences of each language
+  countries.forEach(country => {
+    const language = country.language;
+    if (languageCounts[language]) {
+      languageCounts[language]++;
+    } else {
+      languageCounts[language] = 1;
+    }
+  });
+
+  // Convert the language counts object into an array of objects
+  const languageCountsArray = Object.entries(languageCounts).map(([language, count]) => ({
+    language,
+    count
+  }));
+
+  // Sort the languages by count in descending order
+  languageCountsArray.sort((a, b) => b.count - a.count);
+
+  // Return the top `limit` languages
+  return languageCountsArray.slice(0, limit);
+}
+
+console.log(mostSpokenLanguages(countries, 10));
+console.log(mostSpokenLanguages(countries, 3));
+
+OUTPUT:
+Estonia, Finland, Sweden, Denmark, Norway, and Iceland are north European countries
